@@ -6,10 +6,6 @@ class Vehicle {
         this.year = year
         this.make = make
         this.model = model
-        this.odom = odom
-        this.msrp = msrp
-        this.listPrice = listPrice
-
     }
 
 }

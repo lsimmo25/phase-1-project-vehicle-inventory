@@ -1,0 +1,13 @@
+{
+    "vehicles": [
+      {
+        "id": "1",
+        "vin": "1C4RJFAG6CC128152",
+        "type": "used",
+        "year": "2012",
+        "make": "Jeep",
+        "model": "Grand Cherokee",
+      }
+    ]
+}
+      
