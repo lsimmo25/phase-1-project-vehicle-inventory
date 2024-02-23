@@ -6,8 +6,37 @@
     <title>Document</title>
 </head>
 <body>
-
-
+    <header>
+        <h1 id="title">Lyle's Dealership</h1>
+    </header>
+    
+    <form>
+        <label for="Add Vehicle">Add Vehicle</label>
+        <br>
+        <input type="text" name="stock-number" id="stock-number" placeholder="Enter Stock Number">
+        <input type="text" name="vin" id="vin" placeholder="Enter VIN">
+        <button type="button" name="DECODE">DECODE</button>
+        <label for="Used Vehicle">Used</label>
+        <input type="radio" name="used" id="used">
+        <label for="New">New</label>
+        <input type="radio" name="new" id="new">
+        <br>
+        <input type="text" name="year" id="year" placeholder="Enter Year">
+        <input type="text" name="make" id="make" placeholder="Enter Make">
+        <input type="text" name="model" id="model" placeholder="Enter Model">
+        <br>
+        <input type="text" name="odom" id="odom" placeholder="Enter Odometer">
+        <input type="text" name="msrp" id="msrp" placeholder="Enter MSRP">
+        <input type="text" name="list-price" id="list-price" placeholder="Enter List Price">
+        
+    </form>
+    
+    <section id="current-inventory">
+        <h2>Current Inventory</h2>
+        <div class="inventory-container">
+            <!-- current inventory will go here -->
+        </div>
+    </section>
     
     <script src="index.js"></script>
 </body>
