@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <header>
         <h1 id="title">Dealership Name</h1>
     </header>
-    
-    <form>
-        <label for="Add Vehicle">Add Vehicle</label>
+
+    <form id="add-vehicle-form">
+        <label for="Add Vehicle">Fill out this form to add a new vehicle:</label>
         <br>
         <input type="text" name="stock-number" id="stock-number" placeholder="Enter Stock Number">
         <input type="text" name="vin" id="vin" placeholder="Enter VIN">
@@ -21,9 +23,10 @@
         <input type="text" name="make" id="make" placeholder="Enter Make">
         <input type="text" name="model" id="model" placeholder="Enter Model">
         <br>
-        
+        <button type="button" id="add-vehicle">Add Vehicle</button>
+
     </form>
-    
+
     <section id="current-inventory">
         <h2>Current Inventory</h2>
         <div>
@@ -31,10 +34,14 @@
             <button>Search</button> <button>Clear Search</button>
         </div>
         <div class="inventory-container">
-            <!-- current inventory will go here -->
+            <ul id="inventory-list">
+                <!-- current inventory will go here -->
+            </ul>
+
         </div>
     </section>
-    
+
     <script src="index.js"></script>
 </body>
+
 </html>

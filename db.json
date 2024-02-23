@@ -1,13 +1,15 @@
 {
     "vehicles": [
-      {
-        "id": "1",
-        "vin": "1C4RJFAG6CC128152",
-        "type": "used",
-        "year": "2012",
-        "make": "Jeep",
-        "model": "Grand Cherokee",
-      }
-    ]
-}
+        {
+          "id": "1",
+          "stock": "P001",
+          "vin": "1C4RJFAG6CC128152",
+          "year": "2012",
+          "make": "Jeep",
+          "model": "Grand Cherokee"
+        }
+      ]
+  }
+
+    
       
