@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    const inventoryList = document.getElementById("inventory-list")
+    const inventoryList = document.getElementById("table-content")
     const decodeBtn = document.getElementById("decode")
     const newStockNum = document.getElementById("stock-number")
     const newVin = document.getElementById("vin")
@@ -67,16 +67,21 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(res => res.json())
             .then(vehicles => {
                 vehicles.forEach(vehicle => {
-                    const listItem = document.createElement("li")
-                    listItem.textContent = `
-                    Stock: ${vehicle.stock} | 
-                    VIN: ${vehicle.vin} | 
-                    Year: ${vehicle.year} | 
-                    Make: ${vehicle.make} | 
-                    Model: ${vehicle.model}
+                    const tableContent = document.createElement("tr")
+                    const deleteBtn = document.createElement("button")
+                    deleteBtn.classList.add("delete-button")
+                    deleteBtn.textContent = "Delete"
+                    tableContent.innerHTML = `
+                        <td>${vehicle.stock}</td>
+                        <td>${vehicle.vin}</td>
+                        <td>${vehicle.year}</td>
+                        <td>${vehicle.make}</td>
+                        <td>${vehicle.model}</td>
                     `
-                    inventoryList.appendChild(listItem)
+                    inventoryList.appendChild(tableContent)
+
                 })
+
             })
             .catch(error => console.log(error))
 
@@ -100,13 +105,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 //Since our filter returns a new array with the searchValue if we use if > 0 it will know that we actually returned an array
                 if (searchVehicleResult.length > 0) {
                     searchVehicleResult.forEach(vehicle => {
-                        const displayResult = document.createElement("li")
-                        displayResult.textContent = `
-                        Stock: ${vehicle.stock} | 
-                        VIN: ${vehicle.vin} | 
-                        Year: ${vehicle.year} | 
-                        Make: ${vehicle.make} | 
-                        Model: ${vehicle.model}
+                        const displayResult = document.createElement("tr")
+                        displayResult.innerHTML = `
+                        <tr>
+                            <td>${vehicle.stock}</td>
+                            <td>${vehicle.vin}</td>
+                            <td>${vehicle.year}</td>
+                            <td>${vehicle.make}</td>
+                            <td>${vehicle.model}</td>
+                        </tr>
                     `
                         inventoryList.appendChild(displayResult)
                     })

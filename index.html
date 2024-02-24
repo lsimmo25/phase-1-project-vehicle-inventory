@@ -10,34 +10,47 @@
 <body>
     <header>
         <h1 id="title">Dealership Name</h1>
+        <link rel="stylesheet" href="stylesheet.css">
     </header>
 
     <form id="add-vehicle-form">
         <label for="Add Vehicle">Fill out this form to add a new vehicle:</label>
         <br>
-        <input type="text" name="stock-number" id="stock-number" placeholder="Enter Stock Number">
-        <input type="text" name="vin" id="vin" placeholder="Enter VIN">
-        <button type="button" name="DECODE" id="decode">DECODE</button>
+        <input type="text" name="stock-number" id="stock-number" placeholder="Enter Stock Number" class="input-field">
+        <input type="text" name="vin" id="vin" placeholder="Enter VIN" class="input-field">
+        <button type="button" name="DECODE" id="decode" class="decode-button"><span>DECODE</span></button>
         <br>
-        <input type="text" name="year" id="year" placeholder="Enter Year">
-        <input type="text" name="make" id="make" placeholder="Enter Make">
-        <input type="text" name="model" id="model" placeholder="Enter Model">
+        <input type="text" name="year" id="year" placeholder="Enter Year" class="input-field">
+        <input type="text" name="make" id="make" placeholder="Enter Make" class="input-field">
+        <input type="text" name="model" id="model" placeholder="Enter Model" class="input-field">
         <br>
-        <button type="submit" id="add-vehicle">Add Vehicle</button>
+        <button type="submit" id="add-vehicle" class="add-button">Add Vehicle</button>
 
     </form>
 
     <section id="current-inventory">
         <h2>Current Inventory</h2>
         <div>
-            <input type="text" name="searchValue" id="search-value" placeholder="Search Stock Number">
-            <button type="button" id="search">Search</button> <button type="button" id="clear">Clear Search</button>
+            <input type="text" name="searchValue" id="search-value" placeholder="Search Stock Number"
+                class="input-field">
+            <button type="button" id="search" class="search-button">Search</button> <button type="button" id="clear"
+                class="clear-button">Clear Search</button>
         </div>
-        <div class="inventory-container">
-            <ul id="inventory-list">
-                <!-- current inventory will go here -->
-            </ul>
+        <div id="inventory-container" class="inventory-container">
+            <table id="inventory-list">
+                <thead id="table-headers" class="table-headers">
+                    <tr>
+                        <th>Stock</th>
+                        <th>VIN</th>
+                        <th>Year</th>
+                        <th>Make</th>
+                        <th>Model</th>
+                    </tr>
+                </thead>
+                <tbody id="table-content" class="table-content">
 
+                </tbody>
+            </table>
         </div>
     </section>
 

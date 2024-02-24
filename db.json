@@ -47,6 +47,23 @@
       "year": "2011",
       "make": "DODGE",
       "model": "Caliber"
+    },
+    {
+      "id": "333b",
+      "stock": "P007",
+      "vin": "2FMDK3JC3DBB11096",
+      "year": "2011",
+      "make": "FORD",
+      "model": "Edge"
+    },
+    {
+      "id": "0227",
+      "stock": "P008",
+      "vin": "1G1PC5SB5E7122507",
+      "year": "2011",
+      "make": "CHEVROLET",
+      "model": "Cruze"
     }
   ]
 }
+
