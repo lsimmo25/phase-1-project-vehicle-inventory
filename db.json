@@ -1,15 +1,52 @@
 {
-    "vehicles": [
-        {
-          "id": "1",
-          "stock": "P001",
-          "vin": "1C4RJFAG6CC128152",
-          "year": "2012",
-          "make": "Jeep",
-          "model": "Grand Cherokee"
-        }
-      ]
-  }
-
-    
-      
+  "vehicles": [
+    {
+      "id": "1",
+      "stock": "P001",
+      "vin": "1C4RJFAG6CC128152",
+      "year": "2012",
+      "make": "Jeep",
+      "model": "Grand Cherokee"
+    },
+    {
+      "id": "54c1",
+      "stock": "P002",
+      "vin": "5N1AR18W56C649255",
+      "year": "2011",
+      "make": "NISSAN",
+      "model": "Pathfinder"
+    },
+    {
+      "id": "68d1",
+      "stock": "P003",
+      "vin": "WBSPM9C53BE203591",
+      "year": "2011",
+      "make": "BMW",
+      "model": "M3"
+    },
+    {
+      "id": "31b7",
+      "stock": "P004",
+      "vin": "1J4NT1GA7BD127965",
+      "year": "2011",
+      "make": "JEEP",
+      "model": "Patriot"
+    },
+    {
+      "id": "886b",
+      "stock": "P005",
+      "vin": "3VW2K7AJ2DM380896",
+      "year": "2011",
+      "make": "VOLKSWAGEN",
+      "model": "Jetta"
+    },
+    {
+      "id": "6170",
+      "stock": "P006",
+      "vin": "1B3CB5HA7BD211369",
+      "year": "2011",
+      "make": "DODGE",
+      "model": "Caliber"
+    }
+  ]
+}

@@ -17,21 +17,21 @@
         <br>
         <input type="text" name="stock-number" id="stock-number" placeholder="Enter Stock Number">
         <input type="text" name="vin" id="vin" placeholder="Enter VIN">
-        <button type="button" name="DECODE">DECODE</button>
+        <button type="button" name="DECODE" id="decode">DECODE</button>
         <br>
         <input type="text" name="year" id="year" placeholder="Enter Year">
         <input type="text" name="make" id="make" placeholder="Enter Make">
         <input type="text" name="model" id="model" placeholder="Enter Model">
         <br>
-        <button type="button" id="add-vehicle">Add Vehicle</button>
+        <button type="submit" id="add-vehicle">Add Vehicle</button>
 
     </form>
 
     <section id="current-inventory">
         <h2>Current Inventory</h2>
         <div>
-            <input type="text" name="" id="" placeholder="Search Stock Number">
-            <button>Search</button> <button>Clear Search</button>
+            <input type="text" name="searchValue" id="search-value" placeholder="Search Stock Number">
+            <button type="button" id="search">Search</button> <button type="button" id="clear">Clear Search</button>
         </div>
         <div class="inventory-container">
             <ul id="inventory-list">
