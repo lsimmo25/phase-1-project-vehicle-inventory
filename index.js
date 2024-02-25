@@ -39,10 +39,14 @@ document.addEventListener("DOMContentLoaded", () => {
             },
             body: JSON.stringify(vehicle)
         })
-            .catch(error => console.log(error))
+        .then(() => {
+            displayVehicles()
+        })
+        .catch(error => console.log(error))
     }
 
     addVehicleForm.addEventListener("submit", (e) => {
+        e.preventDefault()
         addVehicle()
     })
 
@@ -72,7 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(vehicles => {
                 inventoryList.innerHTML = ""
                 vehicles.forEach(vehicle => {
-                    console.log(vehicle.id)
                     const tableContent = document.createElement("tr")
                     tableContent.innerHTML = `
                         <td>${vehicle.stock}</td>
@@ -89,6 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         console.log("clicked!")
                         deleteVehicle(vehicle)
                     })
+
                 })
 
             })
@@ -96,6 +100,13 @@ document.addEventListener("DOMContentLoaded", () => {
         //Event listeners to filter and clear filter
         searchBtn.addEventListener("click", searchStock)
         clearBtn.addEventListener("click", clearFilter)
+
+
+        document.getElementById("search-value").addEventListener("keydown", (e) => {
+            if (e.key === "Enter") {
+                searchStock()
+            }
+        })
 
 
     }
@@ -149,7 +160,10 @@ document.addEventListener("DOMContentLoaded", () => {
         fetch(`http://localhost:3000/vehicles/${vehicle.id}`, {
             method: "DELETE"
         })
-            .catch(error => console.log(error))
+        .then(() => {
+            displayVehicles()
+        })
+        .catch(error => console.log(error))
 
     }
 
