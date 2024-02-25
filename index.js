@@ -70,6 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
         fetch(`http://localhost:3000/vehicles`)
             .then(res => res.json())
             .then(vehicles => {
+                inventoryList.innerHTML = ""
                 vehicles.forEach(vehicle => {
                     console.log(vehicle.id)
                     const tableContent = document.createElement("tr")
@@ -120,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             <td>${vehicle.model}</td>
                             <td><button type="button" class="delete-button">X</button></td>
                         </tr>
-                    `   
+                    `
                         //Event listner to delete searched result vehicle
                         displayResult.querySelector(".delete-button").addEventListener("click", () => {
                             deleteVehicle(vehicle)
@@ -148,9 +149,6 @@ document.addEventListener("DOMContentLoaded", () => {
         fetch(`http://localhost:3000/vehicles/${vehicle.id}`, {
             method: "DELETE"
         })
-            .then(() => {
-                location.reload()
-            })
             .catch(error => console.log(error))
 
     }
