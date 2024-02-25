@@ -115,7 +115,13 @@ document.addEventListener("DOMContentLoaded", () => {
         fetch(`http://localhost:3000/vehicles`)
             .then(res => res.json())
             .then(vehicles => {
-                const searchVehicleResult = vehicles.filter(vehicle => vehicle.stock.toLowerCase() === searchValue)
+                const searchVehicleResult = vehicles.filter(
+                    vehicle => vehicle.stock.toLowerCase() === searchValue ||
+                    vehicle.vin.toLowerCase() === searchValue ||
+                    vehicle.year.toLowerCase() === searchValue ||
+                    vehicle.make.toLowerCase() === searchValue ||
+                    vehicle.model.toLowerCase() === searchValue     
+                    )
                 inventoryList.innerHTML = ""
                 //Check to see if result is an array with a value
                 if (searchVehicleResult.length > 0) {
