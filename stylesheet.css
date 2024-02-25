@@ -1,14 +1,23 @@
 body {
-    background: #d7d7d8;
+    background: #e0eec6;
 }
 
 header {
 
-    background-color: #333;
+    font-family: "Century Gothic";
+    background-color: #243e36;
     color: white;
     padding: 20px;
     text-align: center;
 
+}
+
+input[type="text"]::placeholder {
+    text-align: center;
+}
+
+form {
+    text-align: center;
 }
 
 #title {
@@ -50,14 +59,15 @@ label {
 
 }
 
-.decode-button {
+.add-button {
+    margin-top: .25cm;
     display: inline-block;
     outline: none;
     cursor: pointer;
     padding: 0 16px;
-    background-color: #0070d2;
+    background-color: #c2a83e;
     border-radius: 0.25rem;
-    border: 1px solid #0070d2;
+    border: 1px solid #7ca982;
     color: #fff;
     font-size: 13px;
     line-height: 30px;
@@ -69,16 +79,17 @@ label {
     } 
 }
 
-.add-button {
+.decode-button {
     display: inline-block;
-    margin-top: 0.5%;
+    margin-top: 0.25cm;
+    margin-bottom: .25cm;
     outline: none;
     cursor: pointer;
     padding: 0 16px;
     background-color: #fff;
     border-radius: 0.25rem;
-    border: 1px solid #0070d2;
-    color: #0070d2;
+    border: 1px solid #7ca982;
+    color: #7ca982;
     font-size: 13px;
     line-height: 30px;
     font-weight: 400;
@@ -135,10 +146,6 @@ label {
     }
 }
 
-.delete-button {
-
-}
-
 table {
     width: 100%;
     border-collapse: collapse;
@@ -169,10 +176,11 @@ thead th {
 }
 
 .delete-button {
-    background-color: #ff5c5c;
+    background-color: #c2a83e;
     color: white;
     border: none;
-    padding: 5px 10px;
+    padding: 1px 3px;
     cursor: pointer;
     border-radius: 5px;
+    
 }

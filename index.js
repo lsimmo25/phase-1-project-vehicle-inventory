@@ -77,6 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <td>${vehicle.year}</td>
                         <td>${vehicle.make}</td>
                         <td>${vehicle.model}</td>
+                        <td><button type="button" class="delete-button">X</button></td>
                     `
                     inventoryList.appendChild(tableContent)
 
@@ -113,13 +114,14 @@ document.addEventListener("DOMContentLoaded", () => {
                             <td>${vehicle.year}</td>
                             <td>${vehicle.make}</td>
                             <td>${vehicle.model}</td>
+                            <td><button type="button" class="delete-button">X</button></td>
                         </tr>
                     `
                         inventoryList.appendChild(displayResult)
                     })
                 } else {
-                    const noResultMessage = document.createElement("li")
-                    noResultMessage.textContent = "No vehicle found with that stock number"
+                    const noResultMessage = document.createElement("tr")
+                    noResultMessage.innerHTML = `<td colspan="6">No vehicle found with that stock number</td>`
                     inventoryList.appendChild(noResultMessage)
 
                 }

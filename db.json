@@ -63,7 +63,22 @@
       "year": "2011",
       "make": "CHEVROLET",
       "model": "Cruze"
+    },
+    {
+      "id": "ca60",
+      "stock": "P009",
+      "vin": "5NPEB4AC3DH694417",
+      "year": "2011",
+      "make": "HYUNDAI",
+      "model": "Sonata"
+    },
+    {
+      "id": "24e5",
+      "stock": "P010",
+      "vin": "JF1GE61698H513935",
+      "year": "2011",
+      "make": "SUBARU",
+      "model": "Impreza"
     }
   ]
 }
-
