@@ -52,7 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Decode VIN and auto populate Year, Make and Model
     const decodeVin = (vin) => {
-        console.log(vin)
         return fetch(`https://vpic.nhtsa.dot.gov/api/vehicles/decodevinvalues/${vin}*BA?format=json&modelyear=2011`)
             .then(res => res.json())
             .then(data => {
@@ -89,7 +88,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     //Event listener to delete inventory
                     tableContent.querySelector(".delete-button").addEventListener("click", () => {
-                        console.log("clicked!")
                         deleteVehicle(vehicle)
                     })
 
