@@ -50,8 +50,9 @@ label {
     border-radius: 4px;
     background-color: #fff;
     color: rgb(8, 7, 7);
-    transition: border .1s linear,background-color .1s linear;
-    :focus{
+    transition: border .1s linear, background-color .1s linear;
+
+    :focus {
         border-color: #1b96ff;
         color: var(--sds-c-input-text-color-focus);
         box-shadow: rgb(1, 118, 211) 0px 0px 3px 0px;
@@ -73,10 +74,11 @@ label {
     line-height: 30px;
     font-weight: 400;
     text-align: center;
+
     :hover {
-        background-color: #005fb2;  
+        background-color: #005fb2;
         border-color: #005fb2;
-    } 
+    }
 }
 
 .decode-button {
@@ -94,9 +96,10 @@ label {
     line-height: 30px;
     font-weight: 400;
     text-align: center;
+
     :hover {
-        background-color: #f4f6f9; 
-    } 
+        background-color: #f4f6f9;
+    }
 }
 
 .search-button {
@@ -115,6 +118,7 @@ label {
     font-weight: 400;
     height: 36px;
     transition: all 150ms ease-in-out 0s;
+
     :hover {
         color: rgb(255, 255, 255);
         background-color: rgb(17, 97, 73);
@@ -138,6 +142,7 @@ label {
     font-weight: 400;
     height: 36px;
     transition: all 150ms ease-in-out 0s;
+
     :hover {
         color: rgb(61, 79, 88);
         background-color: rgb(255, 255, 255);
@@ -182,5 +187,5 @@ thead th {
     padding: 1px 3px;
     cursor: pointer;
     border-radius: 5px;
-    
+
 }

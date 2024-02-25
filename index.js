@@ -11,22 +11,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
+    //Inventory Container
     const inventoryList = document.getElementById("table-content")
-    const decodeBtn = document.getElementById("decode")
+
+    //Form Inputs
+    const addVehicleForm = document.getElementById("add-vehicle-form")
     const newStockNum = document.getElementById("stock-number")
     const newVin = document.getElementById("vin")
     const newYear = document.getElementById("year")
     const newMake = document.getElementById("make")
     const newModel = document.getElementById("model")
-    const addVehicleForm = document.getElementById("add-vehicle-form")
+
+    //Buttons
     const searchBtn = document.getElementById("search")
     const clearBtn = document.getElementById("clear")
+    const decodeBtn = document.getElementById("decode")
 
 
     // Add new vehicle to current inventory list
     const addVehicle = () => {
         const vehicle = new Vehicle(newStockNum.value, newVin.value, newYear.value, newMake.value, newModel.value)
-        console.log(vehicle)
         fetch(`http://localhost:3000/vehicles`, {
             method: "POST",
             headers: {
@@ -67,43 +71,43 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(res => res.json())
             .then(vehicles => {
                 vehicles.forEach(vehicle => {
+                    console.log(vehicle.id)
                     const tableContent = document.createElement("tr")
-                    const deleteBtn = document.createElement("button")
-                    deleteBtn.classList.add("delete-button")
-                    deleteBtn.textContent = "Delete"
                     tableContent.innerHTML = `
                         <td>${vehicle.stock}</td>
                         <td>${vehicle.vin}</td>
                         <td>${vehicle.year}</td>
                         <td>${vehicle.make}</td>
                         <td>${vehicle.model}</td>
-                        <td><button type="button" class="delete-button">X</button></td>
+                        <td><button type="button" class="delete-button" id="delete-button">X</button></td>
                     `
                     inventoryList.appendChild(tableContent)
 
+                    //Event listener to delete inventory
+                    tableContent.querySelector(".delete-button").addEventListener("click", () => {
+                        console.log("clicked!")
+                        deleteVehicle(vehicle)
+                    })
                 })
 
             })
             .catch(error => console.log(error))
-
+        //Event listeners to filter and clear filter
         searchBtn.addEventListener("click", searchStock)
         clearBtn.addEventListener("click", clearFilter)
+
+
     }
 
     //Filter Inventory by Stock Number
     const searchStock = () => {
-
-        // when I click search I want to pull the value from searchValue in a new array
-        // I then want the container inventoryList to only show the new array
-        // I want this formatted the same way as display vehicles
-
         const searchValue = document.getElementById("search-value").value.toLowerCase()
         fetch(`http://localhost:3000/vehicles`)
             .then(res => res.json())
             .then(vehicles => {
                 const searchVehicleResult = vehicles.filter(vehicle => vehicle.stock.toLowerCase() === searchValue)
                 inventoryList.innerHTML = ""
-                //Since our filter returns a new array with the searchValue if we use if > 0 it will know that we actually returned an array
+                //Check to see if result is an array with a value
                 if (searchVehicleResult.length > 0) {
                     searchVehicleResult.forEach(vehicle => {
                         const displayResult = document.createElement("tr")
@@ -116,7 +120,12 @@ document.addEventListener("DOMContentLoaded", () => {
                             <td>${vehicle.model}</td>
                             <td><button type="button" class="delete-button">X</button></td>
                         </tr>
-                    `
+                    `   
+                        //Event listner to delete searched result vehicle
+                        displayResult.querySelector(".delete-button").addEventListener("click", () => {
+                            deleteVehicle(vehicle)
+                        })
+
                         inventoryList.appendChild(displayResult)
                     })
                 } else {
@@ -128,19 +137,28 @@ document.addEventListener("DOMContentLoaded", () => {
             })
     }
 
-    //clear filter
+    //Clear Filter
     const clearFilter = () => {
         inventoryList.innerHTML = ""
         displayVehicles()
     }
 
     //Delete Stock from current inventory list
+    const deleteVehicle = (vehicle) => {
+        fetch(`http://localhost:3000/vehicles/${vehicle.id}`, {
+            method: "DELETE"
+        })
+            .then(() => {
+                location.reload()
+            })
+            .catch(error => console.log(error))
+
+    }
 
 
 
     const main = () => {
         displayVehicles()
-
     }
 
     main()
